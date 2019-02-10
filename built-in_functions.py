@@ -1,0 +1,10 @@
+print("Hi")
+str(5)
+int("5")
+float("6.7")
+bool("True")
+len("Hello")
+len([1, 2, 5, 4])
+sorted([16, 3, 8, 9, 765,903,4,67])
+# Alphanumeric sort : numbers, capital letters, normal letters
+sorted(["B", "Root", "alpha", "5", "19.8"])
