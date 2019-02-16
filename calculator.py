@@ -22,7 +22,6 @@ def performMath():
         # eval should be avoided because it can be dangerous
         # i.e. "eval "Hello world"
         # eval can evaluate any python code         
-
-
+        # This is why input must be checked 
 while run:
     performMath()
