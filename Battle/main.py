@@ -10,7 +10,7 @@ quake = Spell("Quake", 14, 140, "black")
 cure = Spell("cure", 12, 120, "white")
 cura = Spell("cura", 18, 200, "white")
 
-# player_magic=[{"name":"Fire", "cost":10, "dmg":100},
+
 
 player=Person(460,65,60,34, [fire,Thunder,blizzard,cure,cura])
 ennemy=Person(1200,65,45,25, [])
