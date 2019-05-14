@@ -5,14 +5,14 @@ colorama.init()
 fire = Spell("Fire", 10, 100, "black")
 Thunder = Spell("Thunder", 12, 124, "black")
 blizzard = Spell("Blizzard", 10, 100, "black")
-Meteor = Spell("Meteor", 20, 200, "black")
+meteor = Spell("Meteor", 20, 200, "black")
 quake = Spell("Quake", 14, 140, "black")
 cure = Spell("cure", 12, 120, "white")
 cura = Spell("cura", 18, 200, "white")
 
 
 
-player=Person(460,65,60,34, [fire,Thunder,blizzard,cure,cura])
+player=Person(460,65,60,34, [fire,Thunder,blizzard,meteor,cure,cura])
 ennemy=Person(1200,65,45,25, [])
 
 running = True
@@ -39,8 +39,13 @@ while running:
             print(bcolors.FAIL + "\nNot enough MP\n"+ bcolors.ENDC)
             continue
         player.reduce_mp(spell.cost)
-        ennemy.take_damage(magic_dmg)
-        print(bcolors.OKBLUE+"\n" + spell.name + " deals",str(magic_dmg), "points of damage"+bcolors.ENDC)
+        
+        if spell.type=="white" :
+            player.heal(magic_dmg)
+            print(bcolors.OKBLUE+"\n" + spell.name + " heals for",str(magic_dmg), "Hit Points"+bcolors.ENDC)
+        elif spell.type=="black" :
+            ennemy.take_damage(magic_dmg)
+            print(bcolors.OKBLUE+"\n" + spell.name + " deals",str(magic_dmg), "points of damage"+bcolors.ENDC)
 
     ennemy_choice = 1
     ennemy_dmg=ennemy.generate_damage()
