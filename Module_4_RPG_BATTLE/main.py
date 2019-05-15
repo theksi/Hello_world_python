@@ -14,8 +14,8 @@ print("Valos:        460/460      |███████████████
 print("                            ________________________     _________")
 print("Valos:        460/460      |████████████████████████|   |█████████|")
 print("\n\n")
+# SuperTrooper ....
 
-    
 # Create Spell list
 fire = Spell("Fire", 10, 100, "black")
 Thunder = Spell("Thunder", 12, 124, "black")
