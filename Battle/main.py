@@ -3,8 +3,19 @@ from classes.game import Person, bcolors
 from classes.magic import Spell
 from classes.inventory import Item
 colorama.init()
+print("\n\n")
+print("NAME                        HP                                   MP")
+print("                            ________________________            _________")
+print(bcolors.BOLD + "Valos:        "+ "460/460      |"
+    + bcolors.OKGREEN +"████████████████████████" + bcolors.ENDC + bcolors.BOLD + "|   65/65  |"
+    + bcolors.OKBLUE + "█████████" + bcolors.ENDC +"|")
+print("                            ________________________     _________")
+print("Valos:        460/460      |████████████████████████|   |█████████|")
+print("                            ________________________     _________")
+print("Valos:        460/460      |████████████████████████|   |█████████|")
+print("\n\n")
 
-
+    
 # Create Spell list
 fire = Spell("Fire", 10, 100, "black")
 Thunder = Spell("Thunder", 12, 124, "black")
