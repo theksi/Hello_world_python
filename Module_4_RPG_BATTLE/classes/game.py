@@ -73,12 +73,61 @@ class Person:
         for item in self.items:
             print("        "+str(i)+":",item["item"].name,":",item["item"].description, " (x" + str(item["quantity"]) + ")")
             i+=1
+    def choose_target(self, ennemies) :
+        i = 1
+        print ("\n" + bcolors.FAIL+bcolors.BOLD + "TARGET:"+ bcolors.ENDC)
+        for ennemy in ennemies:
+            print("        " + str(i)+ ".", ennemy.name)
+            i += 1
+        choice = int(input("    choose target: ")) -1
+        return choice
+
+
+    def get_ennemy_stats (self) :
+        hp_status = str(self.hp) + "/" + str(self.maxhp)
+        while len(hp_status) < 13 :
+            hp_status += " "
+
+        hp_bar =""
+        bar_ticks = (self.hp / self.maxhp) *100 /2
+        while bar_ticks > 0 :
+            hp_bar += "█"
+            bar_ticks -=1
+        while len(hp_bar)<50 :
+            hp_bar += " "
+        print("                            __________________________________________________")
+        print(bcolors.BOLD + self.name + "       " + hp_status + "|"
+            + bcolors.FAIL + hp_bar + bcolors.ENDC + bcolors.BOLD + "|")
+                
     def get_stats(self) :
-        print("                            ________________________           _________")
-        print(bcolors.BOLD + self.name + "       " + str(self.hp) + "/" + str(self.maxhp) + "    |"
-             + bcolors.OKGREEN +"████████████████████████" + bcolors.ENDC + bcolors.BOLD + "|   "
-             + str(self.mp) + "/" + str(self.maxmp) + " |"
-             + bcolors.OKBLUE + "█████████" + bcolors.ENDC + "|")
+        hp_bar =""
+        mp_bar = ""
+        bar_ticks = (self.hp/ self.maxhp)*100 / 4
+        mp_ticks = (self.mp / self.maxmp)*100 /10
+        
+        while bar_ticks > 0 :
+            hp_bar += "█"
+            bar_ticks -=1
+        while len(hp_bar)<25 :
+            hp_bar += " "
+        
+        while mp_ticks >0 :
+            mp_bar += "█"
+            mp_ticks -=1
+        while len(mp_bar) <10 :
+            mp_bar += " "
+        hp_status = str(self.hp) + "/" + str(self.maxhp)
+        while len(hp_status) < 13 :
+            hp_status += " "
+        
+        mp_status = str(self.mp) +"/" +str(self.maxmp)
+        while len(mp_status) <9 :
+            mp_status +=" "
+
+        print("                            _________________________               __________")
+        print(bcolors.BOLD + self.name + "       " + hp_status + "|"
+             + bcolors.OKGREEN + hp_bar + bcolors.ENDC + bcolors.BOLD + "|   "
+             + mp_status + " |" + bcolors.OKBLUE + mp_bar + bcolors.ENDC + "|")
         
 
 
